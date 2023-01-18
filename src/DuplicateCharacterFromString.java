@@ -4,13 +4,11 @@ import java.util.Map;
 import java.util.Set;
 
 public class DuplicateCharacterFromString {
-	
+
 	public static void main(String[] args) {
 
 		String s = "harshal sonawane";
 		char[] ch = s.toCharArray();
-		
-		
 
 //		-------------------------- non repeatintg charcter from string ---------------------------------
 
@@ -27,7 +25,7 @@ public class DuplicateCharacterFromString {
 		Map<Character, Integer> map = new HashMap<>();
 		for (char c : ch) {
 			int count = 1;
-			if (map.get(c) == null && c!=' ') {
+			if (map.get(c) == null && c != ' ') {
 				map.put(c, count);
 			} else {
 				count++;
@@ -42,7 +40,7 @@ public class DuplicateCharacterFromString {
 				System.out.print(c + "  ");
 			}
 		}
-		
+
 		System.out.println();
 		System.out.print("Non Repeated Character : ");
 		for (char c : set1) {
@@ -51,17 +49,16 @@ public class DuplicateCharacterFromString {
 			}
 		}
 		System.out.println();
-		Set<Character> sets = new  HashSet<>();
-		set.clear();
-		for(char c : ch) {
-			if(!sets.add(c)) {
-				set.add(c);
+		Set<Character> sets = new HashSet<>();
+		Set<Character> set2 = new HashSet<>();
+
+		for (char c : ch) {
+			if (!sets.add(c) && c != ' ') {
+				set2.add(c);
 			}
 		}
-		System.out.println(set);
-//System.out.println(sets);
+		System.out.println(set2);
+//		System.out.println(sets);
 	}
-	
-	
 
 }
